@@ -38,6 +38,10 @@
       {
         "command": "aplf.gotoDefinition",
         "title": "Go to Definition File"
+      },
+      {
+        "command": "aplf.findUsage",
+        "title": "Find Usage"
       }
     ],
     "menus": {
@@ -46,8 +50,28 @@
           "command": "aplf.gotoDefinition",
           "when": "editorTextFocus && (editorLangId == 'aplf' || editorLangId == 'sysobject')",
           "group": "navigation"
+        },
+        {
+          "command": "aplf.findUsage",
+          "when": "editorTextFocus && (editorLangId == 'aplf' || editorLangId == 'sysobject')",
+          "group": "navigation"
         }
       ]
+    },
+    "configuration": {
+      "title": "Find Usage Folders",
+      "properties": {
+        "aplf.findUsageFolders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "src/Business/CorporateActions"
+          ],
+          "description": "Workspace-relative folders to search in when using Find Usage."
+        }
+      }
     },
     "keybindings": [
       {
