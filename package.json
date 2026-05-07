@@ -1,0 +1,75 @@
+{
+  "name": "aplf-goto-definition",
+  "displayName": "APLF Go To Definition",
+  "description": "F12 go-to-definition for .aplf and .sysobject files",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iskandermae/apl-vs-extension"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:aplf",
+    "onLanguage:sysobject"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "aplf",
+        "extensions": [
+          ".aplf"
+        ]
+      },
+      {
+        "id": "sysobject",
+        "extensions": [
+          ".sysobject"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "aplf.gotoDefinition",
+        "title": "Go to Definition File"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "aplf.gotoDefinition",
+          "when": "editorTextFocus && (editorLangId == 'aplf' || editorLangId == 'sysobject')",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "aplf.gotoDefinition",
+        "key": "f12",
+        "when": "editorTextFocus && (editorLangId == 'aplf' || editorLangId == 'sysobject')"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "jest",
+    "test:unit": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^18.19.130",
+    "@types/vscode": "^1.75.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  }
+}
