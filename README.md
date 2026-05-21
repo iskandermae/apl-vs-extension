@@ -41,7 +41,7 @@ Open workspace in VS Code → **F5** → Extension Development Host opens with e
 npx vsce package
 ```
 
-Outputs `aplf-goto-definition-0.0.1.vsix` in project root.
+Outputs `aplf-goto-definition-v.v.v.vsix` in project root.
 
 ---
 
@@ -52,7 +52,7 @@ Outputs `aplf-goto-definition-0.0.1.vsix` in project root.
 **CLI:**
 
 ```bash
-code --install-extension aplf-goto-definition-0.0.1.vsix
+code --install-extension aplf-goto-definition-v.v.v.vsix
 ```
 
 ---

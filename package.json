@@ -2,7 +2,7 @@
   "name": "aplf-goto-definition",
   "displayName": "APLF Go To Definition",
   "description": "F12 go-to-definition for .aplf and .sysobject files",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,19 +14,16 @@
   "categories": [
     "Other"
   ],
+  "extensionDependencies": [
+    "OptimaSystems.vscode-apl-language"
+  ],
   "activationEvents": [
-    "onLanguage:aplf",
+    "onLanguage:apl",
     "onLanguage:sysobject"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "languages": [
-      {
-        "id": "aplf",
-        "extensions": [
-          ".aplf"
-        ]
-      },
       {
         "id": "sysobject",
         "extensions": [
@@ -48,12 +45,12 @@
       "editor/context": [
         {
           "command": "aplf.gotoDefinition",
-          "when": "editorTextFocus && (editorLangId == 'aplf' || editorLangId == 'sysobject')",
+          "when": "editorTextFocus && (editorLangId == 'apl' || editorLangId == 'sysobject')",
           "group": "navigation"
         },
         {
           "command": "aplf.findUsage",
-          "when": "editorTextFocus && (editorLangId == 'aplf' || editorLangId == 'sysobject')",
+          "when": "editorTextFocus && (editorLangId == 'apl' || editorLangId == 'sysobject')",
           "group": "navigation"
         }
       ]
@@ -77,7 +74,7 @@
       {
         "command": "aplf.gotoDefinition",
         "key": "f12",
-        "when": "editorTextFocus && (editorLangId == 'aplf' || editorLangId == 'sysobject')"
+        "when": "editorTextFocus && (editorLangId == 'apl' || editorLangId == 'sysobject')"
       }
     ]
   },
