@@ -1,0 +1,5 @@
+[
+  { "info": "ctrl+shift+=", "symbol": "⍬" },
+  { "info": "ctrl+]", "symbol": "←" },
+  { "info": "ctrl+i", "symbol": "⍳" }
+]
